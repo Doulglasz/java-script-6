@@ -12,3 +12,55 @@ body{
 .destaque{ 
     background-color: yellow; 
 }
+
+.caixa{
+    display: flex;
+    flex-direction: row;
+    margin-left: 30vh;
+    gap: 10vh;
+}
+
+.caixa input{
+    width: 6vw;
+    padding: 10%;
+    margin-bottom: 20px;
+}
+
+.caixa button{
+    border: none;
+
+    width: 5vh;
+    height: 5vh;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+
+    background-color: rgb(189, 215, 238);
+    border-radius: 8px;
+    box-shadow: inset 
+        0 0 0 3px aliceblue,
+        0 3px 0 rgb(114, 138, 172),
+        0 5px 0 3px rgb(55, 55, 55),
+        0 0 0 3px rgb(55, 55, 55);
+}
+
+.caixa button:hover{
+    background-color: rgb(215, 231, 245);
+    cursor: pointer;
+}
+
+.caixa button:active{
+    transform: translateY(5px);
+
+    box-shadow: inset
+        0 0 0 3px aliceblue,
+        0 0 0 rgb(189, 215, 238),
+        0 0 0 3px rgb(55, 55, 55);
+}
+
+.resultado{
+    padding: 20px;
+    font-size: 1.5rem;
+    outline: 2px solid rgb(169, 212, 255);
+    background-color: aliceblue;
+    border-radius: 8px;
+}

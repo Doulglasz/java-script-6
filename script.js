@@ -122,4 +122,100 @@
 
 
 // exercicio 9
-    
+    let titulo = document.getElementById("titulo");
+    let botao = document.getElementById("btnMudar");
+
+    botao.addEventListener("click", function(){
+        titulo.innerText = "O título foi alterado.";
+    });
+
+
+// exercicio 10
+    let contagem = 0;
+    let contador = document.getElementById("contador");
+    let botaoIncrementar = document.getElementById("btnIncrementar");
+
+    botaoIncrementar.addEventListener("click", function(){
+        contagem++;
+        contador.innerText = contagem;
+    });
+
+
+// exercicio 11
+    let paragrafos = document.querySelectorAll(".paragrafo");
+    let botaoDestacar = document.getElementById("btnDestacar");
+
+    botaoDestacar.addEventListener("click", function(){
+        paragrafos.forEach(function(elemento){
+            elemento.classList.add("destaque");
+        });
+    });
+
+
+// exercicio 12
+    let campoInput = document.getElementById("campoInput");
+    let textoRefletido = document.getElementById("textoRefletido");
+
+    campoInput.addEventListener("input", function() {
+        textoRefletido.innerText = this.value;
+    });
+
+
+// calculadora
+    let num1 = document.getElementById("num1");
+    let num2 = document.getElementById("num2");
+
+    let btnSoma = document.getElementById("btnSoma");
+    let btnSub = document.getElementById("btnSub");
+    let btnMulti = document.getElementById("btnMulti");
+    let btnDiv = document.getElementById("btnDiv");
+
+    let resultadoCalc = document.getElementById("resultado");
+
+    function somar(a, b) {
+        return a + b;
+    }
+
+    function subtrair(a, b) {
+        return a - b;
+    }
+
+    function multiplicar(a, b) {
+        return a * b;
+    }
+
+    function dividir(a, b) {
+        return a / b;
+    }
+
+    function calcular() {
+        let valor1 = Number(num1.value);
+        let valor2 = Number(num2.value);
+
+        return [valor1, valor2];
+    }
+
+    btnSoma.addEventListener("click", function() {
+        let numeros = calcular();
+        resultadoCalc.innerText = somar(numeros[0], numeros[1]);
+    });
+
+    btnSub.addEventListener("click", function() {
+        let numeros = calcular();
+        resultadoCalc.innerText = subtrair(numeros[0], numeros[1]);
+    });
+
+    btnMulti.addEventListener("click", function() {
+        let numeros = calcular();
+        resultadoCalc.innerText = multiplicar(numeros[0], numeros[1]);
+    });
+
+    btnDiv.addEventListener("click", function() {
+        let numeros = calcular();
+
+        if (numeros[1] == 0) {
+            resultadoCalc.innerText = "Não se divide por 0";
+        } else {
+            resultadoCalc.innerText = dividir(numeros[0], numeros[1]);
+        }
+    });
